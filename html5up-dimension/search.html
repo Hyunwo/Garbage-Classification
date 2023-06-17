@@ -1,75 +1,3 @@
-<!--<!DOCTYPE HTML>
-<html>
-<head>
-    <title>쓰레기 분리수거 </title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-</head>
-<body>
-  <div class="header">
-    <h1>Garbage-Classification</h1>
-  </div>
-
-  <div class="content">
-    <div class="search-container">
-      <input type="text" class="search-input" id="searchInput" placeholder="검색어를 입력하세요">
-      <button class="search-button" onclick="search()">검색</button>
-    </div>
-
-    <div class="result-container">
-      <ul class="search-list" id="searchList"></ul>
-    </div>
-  </div>
-
-  <script>
-    const userArray = [
-      { id: "todayis_wendy", nickname: "Wendy", picture: "https://#" },
-      { id: "wecode_bootcamp", nickname: ">wecode | 위코드", picture: "https://#" },
-      { id: "thisisyourhyung", nickname: "JIHYUNG LEE", picture: "https://#" },
-    ];
-
-    const searchInput = document.getElementById("searchInput");
-    const resultBox = document.querySelector(".result-container");
-    const searchList = document.getElementById("searchList");
-
-    function matchSearch(value) {
-      const searchID = searchInput.value;
-      return value.indexOf(searchID) != -1;
-    }
-
-    function showFilteredID(id) {
-      resultBox.style.display = "flex";
-      const filteredUser = document.createElement("li");
-      filteredUser.innerHTML = `
-        <img class="img-profile" src=${id.picture} alt="${id.id}님의 프로필 사진">
-        <div class="profile-text">
-          <span class="userID point-span">${id.id}</span>
-          <span class="sub-span">${id.nickname}</span>
-        </div>`;
-      searchList.appendChild(filteredUser);
-    }
-
-    searchInput.addEventListener("keyup", function () {
-      searchList.innerHTML = "";
-      resultBox.style.display = "none";
-      if (searchInput.value) {
-        const filteredID = userArray.filter((x) => matchSearch(x.id));
-        if (filteredID) {
-          filteredID.forEach(function (e) {
-            showFilteredID(e);
-          });
-        }
-      }
-    });
-
-    searchInput.addEventListener("focusout", function () {
-      resultBox.style.display = "none";
-    });
-  </script>
-</body>
-</html>-->
 <!DOCTYPE HTML>
 <!--
 	Dimension by HTML5 UP
@@ -85,28 +13,26 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
+		
 
 		<!-- Wrapper -->
 			<div id="wrapper">
-
+				<div style="position: absolute; left: 20px;">
+					<a href="index.html">
+						<img class="img-home" src="images/home_icon.png"/>
+						<span class="imtext">Home</span>
+					</a>
+				</div>
 				<!-- Header -->
 					<header id="header">
 						<div class="logo">
 							<span class="icon fa-gem"></span>
 						</div>
-						<!--<div class="content">
-							<div class="inner">
-								<h1>Garbage-Classification</h1>
-								<p>A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<br />
-								for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p>
-								
-							</div>
-						</div>-->
+				
                         <div class="content">
                             <div class="search-container">
                                 <h1>Garbage-Classification</h1>
                                 <input type="text" class="search-input" id="searchInput" placeholder="검색어를 입력하세요">
-                              <!--  <button class="search-button" onclick="search()">검색</button>-->
                             </div>
                         
                             <div class="result-container">
@@ -118,97 +44,97 @@
 					<div id="main">
 				
 						<article id="newspaper">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">종이류-신문지</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>
 
 						<article id="note">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">종이류-책자,노트</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>
 
 						<article id="cup">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">종이류-종이컵</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>
 
 						<article id="box">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">종이류-상자류</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>
 
 						<article id="pack">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">종이류-종이팩</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>
 
 						<article id="bottle">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">유리병-음료수병</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>
 
 						<article id="can">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">금속캔-음료</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>
 
 						<article id="cans">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">금속캔-기타캔류</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>
 
 						<article id="metal">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">고철류-고철</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>
 
 						<article id="pet">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">페트병-투명페트병</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>
 
 						<article id="plastic">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">합성수지류-플라스틱</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>
 
 						<article id="packaging">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">합성수지류-비닐포장재</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>
 
 						<article id="styrofoam">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">합성수지류-스티로폼완충재</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>
 
 						<article id="battery">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">합성수지류-폐형광등/폐건전지</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>
 
 						<article id="big">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">폐가전제품-대형</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>
 
 						<article id="small">
-							<h2 class="major">쓰레기 분류</h2>
+							<h2 class="major">폐가전제품-소형</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>여기에 카메라 및 쓰레기 분류하는 기능 구현</p>
 						</article>

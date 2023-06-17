@@ -109,6 +109,17 @@ input, select, textarea {
 			transition: none !important;
 		}
 
+		.imtext {
+			position: absolute;
+			top: 20px;
+			left: 10px;
+			z-index: 1;
+			color: white;
+			font-size: 10px;
+			width: 12px;
+			font-weight: bold;
+		}
+
 /* Type */
 
 	html {
