@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자유게시판 글쓰기</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="mt-4 mb-3">
+            <span class="h2"><a href="community.php" style="text-decoration: none; color: black; font-weight: bolder;">자유게시판</a></span>
+        </div>
+        <div class="mb-2 d-flex gap-2">
+            <input type="text" name="name" class="form-control w-25" placeholder="작성자" autocomplete="off" id="id_name">
+            <input type="password" name="pw" class="form-control w-25" placeholder="비밀번호" autocomplete="off" id="id_password">
+        </div>
+        <div>
+            <input type="text" name="title" class="form-control mb-2" placeholder="제목" autocomplete="off" id="id_title">
+        </div>
+
+        <div id="summernote"></div>
+
+        <div class="mt-2 d-flex gap-2 justify-content-end">
+            <a href="community.php"><button class="btn btn-secondary">목록</button></a>
+            <button class="btn btn-primary" onclick="summit()">확인</button>
+        </div>
+
+
+    </div>
+        <script>
+            $('#summernote').summernote({
+                placeholder: '',
+                tabsize: 2,
+                height: 300,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ],
+                callbacks: {
+                // 파일 업로드시 동작하는 코드
+                    onImageUpload: function(files) {
+                        setFiles(files);
+                    },
+                    onPaste: function(e) {
+                        const clipboardData = e.originalEvent.clipboardData;
+                        if (clipboardData && clipboardData.items && clipboardData.items.length) {
+                            const item = clipboardData.items[0];
+                            if (item.kind === 'file' && item.type.indexOf('image/') !== -1) {
+                                e.preventDefault();
+                            }
+                        }
+                    }
+                },
+            });
+
+            
+            function summit() {
+
+                const button = event.srcElement;
+                button.disabled = true;
+
+                // name, pw, title, content를 가지고와서 formdata 로 전송
+                const name = document.getElementById('id_name').value;
+                const pw = document.getElementById('id_password').value;
+                const title = document.getElementById('id_title').value;
+                let content = $('#summernote').summernote('code');
+
+                const formData = new FormData;
+
+                
+                const sommernoteWriteArea = document.getElementsByClassName("note-editable")[0];
+                const srcArray = [];
+                const iframeTags = Array.from(sommernoteWriteArea.getElementsByTagName('iframe'));
+                const imgsTags = Array.from(sommernoteWriteArea.getElementsByTagName('img'));
+
+                
+                iframeTags.forEach(iframe => {
+                    srcArray.push(iframe.src);
+                });
+                imgsTags.forEach(img => {
+                    srcArray.push(img.src);
+                });
+
+                const filesArrayLenght = filesArray.length;
+                for (let i = 0; i < filesArrayLenght; i++) {
+                    const itrFile = filesArray[i];
+                    
+                    if (srcArray.includes(itrFile.name)) {
+
+                        console.log(itrFile.name);
+
+                        const pathSplitArray = itrFile.name.split('/');
+                        content = content.replace(itrFile.name, pathSplitArray[pathSplitArray.length - 1]);
+
+                        formData.append('files[]', itrFile);
+                    }
+                    URL.revokeObjectURL(itrFile.name);
+                }
+
+                formData.append("name", name);
+                formData.append("pw", pw);
+                formData.append("title", title);
+                formData.append("content", content);
+                console.log(content);
+
+                const httpRequest = new XMLHttpRequest();
+                httpRequest.onreadystatechange = () => {
+                    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+                        if (httpRequest.status === 200) {
+                            console.log(httpRequest.response);
+                            location.href = "/community.php";
+                        } else {
+                            alert("게시물 등록중 오류가 발생했습니다.");
+                            button.disabled = false;
+                        }
+                    }
+                }
+                httpRequest.open('post', '/summitPost.php', true);
+                httpRequest.send(formData);
+
+            }
+
+            const filesArray = [];
+
+            // 드래그앤 드랍시 동작하는 코드
+            function setFiles(files) {
+                const filesLenght = files.length;
+                for (let i = 0; i < filesLenght; i++) {
+                    const file = files[i];
+
+                    if (file.type.match('image.*')) {
+                        const url = URL.createObjectURL(file);
+                        file.name = url;
+                        filesArray.push(new File([file], url, {
+                            type: file.type
+                        }));
+
+                        
+                        const imgElement = document.createElement("img");
+                        imgElement.src = url;
+                        const sommernoteWriteArea = document.getElementsByClassName("note-editable")[0];
+                        sommernoteWriteArea.appendChild(imgElement);
+
+
+                    } else if (file.type.match('video.*')) {
+                        const url = URL.createObjectURL(file);
+                        console.log(file.type);
+                        filesArray.push(new File([file], url, {
+                            type: file.type
+                        }));
+
+
+                        const videoIframe = document.createElement("iframe");
+                        videoIframe.src = url;
+                        videoIframe.width = "640px";
+                        videoIframe.height = "480px";
+                        videoIframe.frameBorder = "0";
+                        videoIframe.className = "note-video-clip";
+
+                        const sommernoteWriteArea = document.getElementsByClassName("note-editable")[0];
+                        sommernoteWriteArea.appendChild(videoIframe);
+
+                    } else {
+                        alert('지원하지 않는 파일 타입입니다.');
+                    }
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
