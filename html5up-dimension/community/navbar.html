@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage-Helper</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: black;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-logo {
+            font-weight: bold;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+        .navbar-links {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            left: -90px;
+            top: 100%;
+            
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            margin-top: 0;
+        }
+        .dropdown:hover .menu {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-logo"><a href="index.html" style="text-decoration: none; color: white; font-weight: bolder;">Garbage-Helper</a></div>
+        <div class="navbar-links">
+            <div class="dropdown">
+                <a href="#" class="menu" style="margin-right: 25px;">Menu</a>
+                <div class="dropdown-content">
+                    <a href="introduce.html">서비스 소개</a>
+                    <a href="search.html">검색</a>
+                    <a href="classification.html">쓰레기 분류</a>
+                    <a href="community.php">자유게시판</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
