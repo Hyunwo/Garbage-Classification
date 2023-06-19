@@ -16,17 +16,31 @@
   <p align="center">
     2023.05.01 ~ 2023.06.20 | OpenSource Project Team3
     <br/>
-    <a href="http://13.125.36.142/" target="_blank">
+    <a href="http://13.125.36.142/" target="_blank">http://13.125.36.142/</a>
       <img width="40%" alt="index" src="https://github.com/Hyunwo/Garbage-Classification/assets/75519996/5543abd4-5fc4-4a67-81a5-8796f1339f8c" title="Garbage-Helper">
-    </a>
+    
   </p>
 </div>
 
 ## Overview
+### Introduce
+<a href="http://13.125.36.142/about.php">프로젝트 소개 페이지</a>
+
+
 ### Services
 - 검색을 통해 분리수거 방법 찾기 (Search for Recycling)
+<div align="center">
+  <img width="55%" src="https://github.com/Hyunwo/Garbage-Classification/assets/75519996/0134db42-c9a5-4f72-884a-09cda265f36c">
+  <img width="55%" src="https://github.com/Hyunwo/Garbage-Classification/assets/75519996/405df2d1-7557-47aa-8f99-5c35ddb8fccb">
+  <img width="55%" src="https://github.com/Hyunwo/Garbage-Classification/assets/75519996/73136147-aa13-4874-b240-f357dea73a6a">
+</div>
 - 이미지 삽입을 통해 분리수거 방법 찾기 (Insert image for Recycling)
+
 - 자유게시판을 통해 사람들과 의견을 나눠 분리수거 방법 찾기 (Sharing opnion for Recycling)
+<div align="center">
+  <img width="55%" src="https://github.com/Hyunwo/Garbage-Classification/assets/75519996/56b967fc-8b68-4d83-9e5c-cac917f00a5b">
+  <img width="55%" src="https://github.com/Hyunwo/Garbage-Classification/assets/75519996/2bdfebf6-dab2-46b4-807b-8b9193a4b4ee">
+</div>
 
 
 ## Built With
@@ -39,4 +53,8 @@
 <div align="center">
   <img width="55%" alt="Architecture" src="https://github.com/Hyunwo/Garbage-Classification/assets/75519996/6859c444-58f9-4782-9f89-82999d050b01">
 </div>
+
+## Notice
+<p>본 프로젝트는 상업 용도가 아니며 오픈소스 수업용 프로젝트임을 알립니다.</p>
+<p>AWS EC2 요금으로 인해 2023.06.30에 서버를 종료합니다.</p>
 
