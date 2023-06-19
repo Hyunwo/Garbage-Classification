@@ -1,5 +1,11 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/dbconfig.php"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/navbar.html"; ?>
+<?php
+
+error_reporting(E_ALL);
+
+ini_set('display_errors', '1');?>
+
+<?php include "dbconfig.php"; ?>
+<?php include "navbar.html"; ?>
 <!doctype html>
 <head>
     <meta charset="UTF-8">
