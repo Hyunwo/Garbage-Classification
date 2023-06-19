@@ -16,8 +16,10 @@
   <p align="center">
     2023.05.01 ~ 2023.06.20 | OpenSource Project Team3
     <br/>
-    <a href="http://13.125.36.142/" target="_blank">http://13.125.36.142/</a>
-      <img width="40%" alt="index" src="https://github.com/Hyunwo/Garbage-Classification/assets/75519996/5543abd4-5fc4-4a67-81a5-8796f1339f8c" title="Garbage-Helper">
+    <br>
+    <a href="http://13.125.36.142/" target="_blank">Garbage-Helper</a>
+    </br>
+    <img width="40%" alt="index" src="https://github.com/Hyunwo/Garbage-Classification/assets/75519996/5543abd4-5fc4-4a67-81a5-8796f1339f8c" title="Garbage-Helper">
     
   </p>
 </div>
