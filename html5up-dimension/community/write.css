@@ -1,0 +1,56 @@
+#board_write {
+	width:900px;
+	position:relative;
+	margin:0 auto;
+}
+#write_area {
+	margin-top:70px;
+	font-size:14px;}
+#in_name {
+	margin-top:30px;
+}
+#in_name textarea {
+	font-weight:bold;
+	font-size:26px;
+	color:#333;
+	width: 900px;
+	border:none;
+	resize: none;
+}
+#in_title {
+	margin-top:30px;
+}
+#in_title textarea {
+	font-weight:bold;
+	font-size:26px;
+	color:#333;
+	width: 900px;
+	border:none;
+	resize: none;
+}
+.wi_line {
+	border:solid 1px lightgray;
+	margin-top:10px;
+}
+#in_content {
+	margin-top:10px;
+}
+#in_content textarea {
+	font:14px;
+	color:#333;
+	width: 900px;
+	height: 400px;
+	resize: none;
+}
+#in_pw input {
+	font:14px;
+	margin-top:10px;
+}
+.bt_se {
+	margin-top:20px;
+	text-align:center;
+}
+.bt_se button {
+	width:100px;
+	height:30px;
+}
