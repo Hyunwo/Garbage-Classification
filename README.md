@@ -3,7 +3,8 @@
 --->
 
 <div align="center">
-  <br/>
+  <img width="40%" alt="index" src="https://github.com/Hyunwo/Garbage-Classification/assets/75519996/ff178de0-f8a3-4821-82ce-926808002c95" title="Garbage-Helper">
+
   <h2 align="center">Garbage-Helper</h2>
   <h3 align="center">이미지 분류를 통한 분리수거 방법 제공</h3>
   <p align="center">
@@ -17,9 +18,8 @@
     2023.05.01 ~ 2023.06.20 | OpenSource Project Team3
     <br/>
     <br>
-    <a href="http://13.125.36.142/" target="_blank">Garbage-Helper</a>
+    <a href="http://13.125.36.142/" target="_blank">Link : Garbage-Helper</a>
     </br>
-    <img width="40%" alt="index" src="https://github.com/Hyunwo/Garbage-Classification/assets/75519996/5543abd4-5fc4-4a67-81a5-8796f1339f8c" title="Garbage-Helper">
     
   </p>
 </div>
